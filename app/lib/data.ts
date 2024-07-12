@@ -1,4 +1,4 @@
-import { sql } from '@vercel/postgres';
+import { sql ,db} from '@vercel/postgres';
 import {
   CustomerField,
   CustomersTableType,
@@ -9,11 +9,12 @@ import {
   Revenue,
 } from './definitions';
 import { formatCurrency } from './utils';
+import { unstable_noStore as noStore } from 'next/cache'
 
 export async function fetchRevenue() {
   // Add noStore() here to prevent the response from being cached.
   // This is equivalent to in fetch(..., {cache: 'no-store'}).
-
+  
   try {
     // Artificially delay a response for demo purposes.
     // Don't do this in production :)
@@ -53,6 +54,7 @@ export async function fetchLatestInvoices() {
 }
 
 export async function fetchCardData() {
+  noStore()
   try {
     // You can probably combine these into a single SQL query
     // However, we are intentionally splitting them to demonstrate
@@ -86,6 +88,14 @@ export async function fetchCardData() {
     throw new Error('Failed to fetch card data.');
   }
 }
+
+export async function updateInvoicesData() {
+  const client = await db.connect();
+  await  client.sql`UPDATE invoices SET amount = 1000 WHERE id = 3958dc9e-742f-4377-85e9-fec4b6a6442a `
+  alert(" 数据已经修改了 ")
+
+}
+
 
 const ITEMS_PER_PAGE = 6;
 export async function fetchFilteredInvoices(

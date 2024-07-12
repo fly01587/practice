@@ -70,6 +70,7 @@ const customers = [
     email: 'balazs@orban.com',
     image_url: '/customers/balazs-orban.png',
   },
+
 ];
 
 const invoices = [
@@ -160,6 +161,12 @@ const invoices = [
   {
     customer_id: customers[2].id,
     amount: 1000,
+    status: 'paid',
+    date: '2022-06-05',
+  },
+  {
+    customer_id: customers[3].id,
+    amount: 1898,
     status: 'paid',
     date: '2022-06-05',
   },
