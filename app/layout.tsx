@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   },
   description: '这是一个测试服务端渲染的地址',
   metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
+  keywords: ["测试seo的检索", "用来测试检索seo"],
+  openGraph:{
+    images:"../public/hero-mobile.png"
+  }
 };
  
 export default function RootLayout({
