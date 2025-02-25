@@ -1,10 +1,12 @@
-const { db } = require('@vercel/postgres');
+const { db,createClient } = require('@vercel/postgres');
 const {
   invoices,
   customers,
   revenue,
   users,
 } = require('../app/lib/placeholder-data.js');
+//  需要为 bcrypt 包创建一个单独的文件 auth.ts 。这是因为 bcrypt 依赖于 Next.js 中间件中不可用的 Node.js API
+// 配置云端数据库后本地开发修改的也是云端数据库
 const bcrypt = require('bcrypt');
 
 async function seedUsers(client) {
@@ -161,8 +163,8 @@ async function seedRevenue(client) {
 }
 
 async function main() {
-  const client = await db.connect();
-
+  // const client = await db.connect();
+  const client = await createClient({ connectionString: process.env.POSTGRES_URL })
   await seedUsers(client);
   await seedCustomers(client);
   await seedInvoices(client);

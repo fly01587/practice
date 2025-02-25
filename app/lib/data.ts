@@ -55,7 +55,9 @@ export async function fetchLatestInvoices() {
 
 export async function fetchCardData() {
   noStore()
+  
   try {
+    // throw new Error("This is a demo error");
     // You can probably combine these into a single SQL query
     // However, we are intentionally splitting them to demonstrate
     // how to initialize multiple queries in parallel with JS.
@@ -155,6 +157,8 @@ export async function fetchInvoicesPages(query: string) {
 }
 
 export async function fetchInvoiceById(id: string) {
+  // noStore()
+
   try {
     const data = await sql<InvoiceForm>`
       SELECT

@@ -1,13 +1,18 @@
-import Pagination from '@/app/ui/invoices/pagination';
-import Search from '@/app/ui/search';
-import Table from '@/app/ui/invoices/table';
-import { CreateInvoice } from '@/app/ui/invoices/buttons';
+import { fetchInvoicesPages } from '@/app/lib/data';
 import { lusitana } from '@/app/ui/fonts';
+import { CreateInvoice } from '@/app/ui/invoices/buttons';
+import Pagination from '@/app/ui/invoices/pagination';
+import Table from '@/app/ui/invoices/table';
+import Search from '@/app/ui/search';
 import { InvoicesTableSkeleton } from '@/app/ui/skeletons';
 import { Suspense } from 'react';
-import { fetchInvoicesPages } from '@/app/lib/data';
 
-// 页面级组件解构来的参数从哪来？  类型？
+// 页面级组件解构来的参数从哪来？  类型？ 貌似是从url解析的
+import { Metadata } from 'next';
+ 
+export const metadata: Metadata = {
+  title: 'Invoices ',
+};
 export default async function Page({
     searchParams,
 }: {
@@ -19,7 +24,7 @@ export default async function Page({
     const query = searchParams?.query || '';
     const currentPage = Number(searchParams?.page) || 1;
     const totalPages = await fetchInvoicesPages(query);
-
+    console.log(" 在服务端运行 ")
     return (
         <div className="w-full">
             <div className="flex w-full items-center justify-between">

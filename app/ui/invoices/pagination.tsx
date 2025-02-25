@@ -1,9 +1,9 @@
 'use client';
 
+import { generatePagination } from '@/app/lib/utils';
 import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import Link from 'next/link';
-import { generatePagination } from '@/app/lib/utils';
 import { usePathname, useSearchParams } from 'next/navigation';
 
 export default function Pagination({ totalPages }: { totalPages: number }) {
@@ -20,6 +20,7 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
     return `${pathname}?${params.toString()}`;
   };
 
+  console.log("在客户端运行？")
   return (
     <>
       {/* NOTE: comment in this code when you get to this point in the course */}

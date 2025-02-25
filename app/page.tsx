@@ -1,10 +1,9 @@
 import AcmeLogo from '@/app/ui/acme-logo';
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
-import styles from '@/app/ui/home.module.css';
 import { lusitana } from '@/app/ui/fonts';
+import styles from '@/app/ui/home.module.css';
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
-
+import Link from 'next/link';
 export default function Page() {
   return (
     <main className="flex min-h-screen flex-col p-6">
@@ -32,9 +31,9 @@ export default function Page() {
           </Link>
         </div>
         <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
-          {/* Add Hero Images Here */}
+          {/* Add Hero Images Here  public下的图片文件貌似会直接以下面的方式引用 */}
           <Image
-            src="/hero-mobile.png"
+            src={"/hero-mobile.png"}
             width={560}
             height={620}
             className="hidden md:block"

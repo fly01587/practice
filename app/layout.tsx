@@ -1,7 +1,18 @@
 
-import '@/app/ui/global.css';
 import { inter } from '@/app/ui/fonts';
-
+import '@/app/ui/global.css';
+//* 此类型组件不接收 searchParams props 
+import { Metadata } from 'next';
+ 
+export const metadata: Metadata = {
+  title: {
+    template: '%s | 这是个测试网址',
+    default: '这是个测试网址',
+  },
+  description: '这是一个测试服务端渲染的地址',
+  metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
+};
+ 
 export default function RootLayout({
   children,
 }: {
