@@ -9,9 +9,15 @@ export const metadata: Metadata = {
     template: '%s | 这是个测试网址',
     default: '这是个测试网址',
   },
-  description: '这是一个测试服务端渲染的地址',
+ description: 'Next.js服务端渲染SEO优化实战案例，提供React网站搜索引擎优化解决方案，详解如何解决网站收录问题和提升关键词排名。',
   metadataBase: new URL('https://my-nextjs-kohl.vercel.app'),
-  keywords: ["Next.js SEO测试", "服务端渲染优化"],
+  keywords: [
+    "Next.js SEO优化方案", 
+    "服务端渲染SEO实战", 
+    "React网站搜索引擎优化",
+    "SEO测试最佳实践",
+    "网站收录问题排查"
+  ],
   openGraph:{
     title: '这是个测试网址',
     description: '这是一个测试服务端渲染的地址',

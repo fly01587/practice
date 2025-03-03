@@ -4,13 +4,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         {
             url: 'https://my-nextjs-kohl.vercel.app',
             lastModified: new Date(),
-            changeFrequency: 'yearly',
+            changeFrequency: 'monthly',
             priority: 1,
           },
           {
             url: 'https://my-nextjs-kohl.vercel.app/login',
             lastModified: new Date(),
-            changeFrequency: 'yearly',
+            changeFrequency: 'monthly',
             priority: 0.8,
           },
           
