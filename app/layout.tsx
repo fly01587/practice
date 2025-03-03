@@ -10,10 +10,14 @@ export const metadata: Metadata = {
     default: '这是个测试网址',
   },
   description: '这是一个测试服务端渲染的地址',
-  metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
-  keywords: ["测试seo的检索", "用来测试检索seo"],
+  metadataBase: new URL('https://my-nextjs-kohl.vercel.app'),
+  keywords: ["Next.js SEO测试", "服务端渲染优化"],
   openGraph:{
-    images:"../public/hero-mobile.png"
+    title: '这是个测试网址',
+    description: '这是一个测试服务端渲染的地址',
+    url: 'https://my-nextjs-kohl.vercel.app',
+    images:"/hero-mobile.png",
+     type: 'website'
   }
 };
  
@@ -22,8 +26,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
+
+
+  
   return (
-    <html lang="en">
+    <html lang="zh-CN">
       <head>
       <meta name="google-site-verification" content="yQ_l54LWdSS8raYaMrHttCm1x4P7SyFvOSX6VBtEgSA" />
       </head>

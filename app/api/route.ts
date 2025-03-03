@@ -17,15 +17,22 @@
 //     }
 // }
 
-export  default async function handler(req, res){
-    if(req.method === 'POST'){
-        // return NextResponse.json({ message: 'Hello from API!' });
-        res.status(200).json({ name: 'John Doe' }) 
-
-    }else if(req.method === 'GET'){
-        // return NextResponse.json({ message: 'Hello from API!' });
-        res.status(200).json({ name: 'Get John Doe' }) 
-
-    }
-    res.status(200).json({ name: 'Get John Doe' }) 
+export async function GET(request:Request){
+    return new Response('Hello, Next.js!', {
+        status: 200,
+        headers: { 'Set-Cookie': `token=token123` },
+      }) 
 }
+
+// export  default async function handler(req, res){
+//     if(req.method === 'POST'){
+//         // return NextResponse.json({ message: 'Hello from API!' });
+//         res.status(200).json({ name: 'John Doe' }) 
+
+//     }else if(req.method === 'GET'){
+//         // return NextResponse.json({ message: 'Hello from API!' });
+//         res.status(200).json({ name: 'Get John Doe' }) 
+
+//     }
+//     res.status(200).json({ name: 'Get John Doe' }) 
+// }
